@@ -8,6 +8,9 @@ services:
   basketdb:
     image: redis:alpine
     restart: "no"
+  
+  portainer:
+    image: portainer/portainer-ce
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -22,5 +25,6 @@ services:
       dockerfile: Services/Basket/Basket.API/Dockerfile
 
 volumes:
-  mongo_data: 
+  mongo_data:
+  portainer_data:
   
